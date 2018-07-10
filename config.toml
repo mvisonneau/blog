@@ -1,0 +1,33 @@
+baseURL = "https://maxime.visonneau.fr/"
+disqusShortname = "maxime-visonneau"
+googleAnalytics = "UA-122087856-1"
+languageCode = "en-US"
+theme = "sustain"
+title = "Maxime VISONNEAU"
+
+[permalinks]
+  post = "/:year/:month/:day/:slug"
+
+[params]
+  avatar = "profile.png"
+  author = "Maxime VISONNEAU"
+  description = "Not fun stuff!"
+
+[params.social]
+  Github        = "mvisonneau"
+  Gitlab        = "mvisonneau"
+  Email         = "maxime@visonneau.fr"
+  Twitter       = "mvisonneau"
+  LinkedIn      = "mvisonneau"
+
+[[menu.main]]
+  name = "Blog Posts"
+  weight = 100
+  identifier = "posts"
+  url = "/posts/"
+
+[[menu.main]]
+  name = "OS Projects"
+  identifier = "projects"
+  weight = 200
+  url = "/projects/"

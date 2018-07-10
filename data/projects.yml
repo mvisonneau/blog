@@ -1,0 +1,18 @@
+name: Projects
+source:
+  - icon: fa fa-github
+    name: ahs
+    url: https://github.com/mvisonneau/ahs
+    description: AWS EC2 instance hostname setter
+  - icon: fa fa-github
+    name: s5
+    url: https://github.com/mvisonneau/s5
+    description: Safely Store Super Sensitive Stuff
+  - icon: fa fa-github
+    name: strongbox
+    url: https://github.com/mvisonneau/strongbox
+    description: securely store secrets at rest using Hashicorp Vault
+  - icon: fa fa-github
+    name: terraform-provider-updown
+    url: https://github.com/mvisonneau/terraform-provider-updown
+    description: Terraform provider for updown.io
