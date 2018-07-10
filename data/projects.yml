@@ -5,9 +5,17 @@ source:
     url: https://github.com/mvisonneau/ahs
     description: AWS EC2 instance hostname setter
   - icon: fa fa-github
+    name: docker-registry-gitlab-cleanup
+    url: https://github.com/mvisonneau/docker-registry-gitlab-cleanup
+    description: Small hack to cleanup old docker images in a GitLab embedded docker registry
+  - icon: fa fa-github
     name: marefo
     url: https://github.com/mvisonneau/marefo
     description: Manage the vulnerability of your running containers across your Kubernetes clusters
+  - icon: fa fa-github
+    name: puppetconf2016-tf-ecs
+    url: https://github.com/mvisonneau/puppetconf2016-tf-ecs
+    description: Codebase for the demo I did during my talk at PuppetConf 2016 around scaling puppet on top of AWS using Terraform and ECS
   - icon: fa fa-github
     name: s5
     url: https://github.com/mvisonneau/s5
