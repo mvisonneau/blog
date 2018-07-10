@@ -5,6 +5,10 @@ source:
     url: https://github.com/mvisonneau/ahs
     description: AWS EC2 instance hostname setter
   - icon: fa fa-github
+    name: marefo
+    url: https://github.com/mvisonneau/marefo
+    description: Manage the vulnerability of your running containers across your Kubernetes clusters
+  - icon: fa fa-github
     name: s5
     url: https://github.com/mvisonneau/s5
     description: Safely Store Super Sensitive Stuff
