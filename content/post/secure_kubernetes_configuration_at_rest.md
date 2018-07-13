@@ -168,12 +168,11 @@ data:
 
 `{{ s5:.* }}`
 
-🎉 you can now commit or share your file to whomever you want (or not 😅)!
+🎉 you can now commit or share your file with whomever you want (or not 😅)!
 
 > What I like about it is that it makes it easier to **review changes made to secrets** as we **do not cipher the entire file**.
 
 > Plus, having `Vault` as the encryption backend makes it **easier to handle who can get ciphering and deciphering accesses** as well as cloud provider agnostic (on top of being open source 💚)
-
 
 #### Pro-tip
 
@@ -188,7 +187,7 @@ However here is a quick getting started guide!
 
 You will also need permissions to manipulate the transit backend or already have cipher/decipher access onto a existent transit key otherwise.
 
-> 😅 seriously, I don't have time for that, I just to try it out..
+> 😅 seriously, I don't have time for that, I just want to try it out..
 
 Well, having a Vault endpoint ready is only **about 4 commands** that you can run on your laptop on most common OSes! [Full download page can be found here](https://www.vaultproject.io/downloads.html).
 
@@ -214,7 +213,7 @@ Now that the Vault endpoint is ready, for ease of use you can configure some env
 ~$ export VAULT_TOKEN=268c7fc2-ff96-c11d-150b-074b009f2865 # For this one refer to the root token
 ```
 
-👆 You would have noticed that it listens over `HTTP`, this is because we are running a *development* environment locally. Please don't be that guy that runs it like that in *production* 🙏!
+👆 You would have noticed that it listens over `HTTP`, this is because we are running a *development* environment locally. Please don't run it like that in *production*, use HTTPS 🙏!
 
 You can check that everything is running well by doing a `vault status`.
 
@@ -227,7 +226,7 @@ You can check that everything is running well by doing a `vault status`.
   "n": 1,
   "progress": 0,
   "nonce": "",
-  "version": "0.10.1",
+  "version": "0.10.3",
   "cluster_name": "vault-cluster-a20328ee",
   "cluster_id": "c2fe413d-a8c1-7008-5358-c993d5ac65f4",
   "recovery_seal": false
@@ -245,7 +244,7 @@ Success! Enabled the transit secrets engine at: transit/
 
 ### It's now time to get s5!
 
-Hopefully it's exactly the same as for `Vault`:
+Luckily it's exactly the same as for `Vault`:
 
 ```
 # From GitHub.com
@@ -270,7 +269,7 @@ foobar
 
 > What! I did not even specify any key ? 🤔
 
-`s5` uses `default` as the default *transit key*. On top of that, if a transit key do not exist, `Vault` will create it on the **ciphering request** as long as you have sufficient privileges on the endpoint. You can easily verify that:
+`s5` uses `default` as *transit key name* if none is specified. On top of that, if a transit key do not exist, `Vault` will create it on the **ciphering request** as long as you have sufficient privileges on the endpoint. You can easily verify that:
 
 ```
 ~$ vault list -format json transit/keys
@@ -311,7 +310,7 @@ bar
 
 ## I want to know even more!
 
-If I didn't bored you enough already, here is some other advice on how you could make a use of it at scale. I am personally a big fan of [helm](https://helm.sh/) which is as they said : *"The package manager for Kubernetes"* I would definitely recommend to have a look onto it if you are looking into ways of managing your Kubernetes stacks at scale.
+If I didn't bore you enough already, here is some other advice on how you could make a use of it at scale. I am personally a big fan of [helm](https://helm.sh/) which is as they said : *"The package manager for Kubernetes"* I would definitely recommend to have a look onto it if you are looking into ways of managing your Kubernetes stacks at scale.
 
 This is actually how I use it myself, there is a special `--in-place/-i` flag that allows you to render the file *in-place* before letting helm consume it. This is something that is being done as part of a Makefile within a CI job.
 
@@ -324,7 +323,7 @@ This is actually how I use it myself, there is a special `--in-place/-i` flag th
 
 I recently started to work onto an [atom](https://atom.io) [plugin](https://github.com/mvisonneau/atom-s5) in order to easily make changes onto values. This is still a work in progress in terms of features but it works! PR are always welcome!
 
-<gif>
+![atom-demo](/post/secure_kubernetes_configuration_at_rest/atom-demo.gif)
 
 ## I am done!
 
