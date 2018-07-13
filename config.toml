@@ -2,32 +2,45 @@ baseURL = "https://maxime.visonneau.fr/"
 disqusShortname = "maxime-visonneau"
 googleAnalytics = "UA-122087856-1"
 languageCode = "en-US"
-theme = "sustain"
+theme = "hucore"
+tags = ["blog", "font awesome", "highlight.js"]
 title = "Maxime VISONNEAU"
 
-[permalinks]
-  post = "/:year/:month/:day/:slug"
+# [permalinks]
+#   post = "/:year/:month/:day/:slug"
 
 [params]
-  avatar = "profile.png"
   author = "Maxime VISONNEAU"
   description = "Not fun stuff!"
 
-[params.social]
-  Github        = "mvisonneau"
-  Gitlab        = "mvisonneau"
-  Email         = "maxime@visonneau.fr"
-  Twitter       = "mvisonneau"
-  LinkedIn      = "mvisonneau"
+[[params.social]]
+url = "https://github.com/mvisonneau"
+fa_icon = "fa-github"
 
-[[menu.main]]
-  name = "Blog Posts"
-  weight = 100
-  identifier = "posts"
-  url = "/posts/"
+[[params.social]]
+url = "https://gitlab.com/mvisonneau"
+fa_icon = "fa-gitlab"
 
-[[menu.main]]
-  name = "OS Projects"
-  identifier = "projects"
-  weight = 200
-  url = "/projects/"
+[[params.social]]
+url = "https://twitter.com/mvisonneau"
+fa_icon = "fa-twitter"
+
+[[params.social]]
+url = "https://linkedin.com/in/mvisonneau"
+fa_icon = "fa-linkedin-square"
+
+[[params.social]]
+url = "/index.xml"
+fa_icon = "fa-rss"
+
+# [[menu.main]]
+#   name = "Blog Posts"
+#   weight = 100
+#   identifier = "posts"
+#   url = "/posts/"
+#
+# [[menu.main]]
+#   name = "OS Projects"
+#   identifier = "projects"
+#   weight = 200
+#   url = "/projects/"
