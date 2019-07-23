@@ -14,6 +14,10 @@ source:
     description: Small hack to cleanup old docker images in a GitLab embedded docker registry
   - icon: fa fa-github
     name: mmds
+    url: https://github.com/mvisonneau/go-ebsnvme
+    description: Golang version of the AWS ebsnvme-id script
+  - icon: fa fa-github
+    name: mmds
     url: https://github.com/mvisonneau/mmds
     description: Missed (AWS) Meta-Data (service)
   - icon: fa fa-github
