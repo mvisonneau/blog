@@ -259,11 +259,11 @@ You should now be able to cipher and decipher text using the s5 cli:
 
 ```
 # CIPHER
-~$ s5 cipher "foobar"
+~$ s5 cipher vault "foobar"
 {{ s5:51HqRqey8aT5AKbOXF2QPI7YvA8xY2OvRb9QrfvYpQ== }}
 
 # DECIPHER
-~$ s5 decipher "{{ s5:51HqRqey8aT5AKbOXF2QPI7YvA8xY2OvRb9QrfvYpQ== }}"
+~$ s5 decipher vault "{{ s5:51HqRqey8aT5AKbOXF2QPI7YvA8xY2OvRb9QrfvYpQ== }}"
 foobar
 ```
 
@@ -282,9 +282,9 @@ From now it is fairly straightforward and pretty much up to you, you can use the
 
 ```
 # CIPHER YOUR VALUES
-~$ s5 cipher foo
+~$ s5 cipher vault foo
 {{ s5:t9RZefdJ38sgosufeLRPNhUx7E0lC0tIiXp4iL676Q== }}
-~$ s5 cipher $( echo bar | base64 )
+~$ s5 cipher vault $( echo bar | base64 )
 {{ s5:bNL+8uNkkv52xaUeH2Ty4+3f7YJKgyOTVcgpvvf1BtKGep4m }}
 
 # WRITE THEM TO YOUR FILES
@@ -300,7 +300,7 @@ data:
 EOF
 
 # GET THEM ON KUBERNETES
-~$ s5 render secret.yml | kubectl apply -f -
+~$ s5 render vault secret.yml | kubectl apply -f -
 secret "mysecret" created
 
 # VERIFY DATA
@@ -315,7 +315,7 @@ If I didn't bore you enough already, here is some other advice on how you could 
 This is actually how I use it myself, there is a special `--in-place/-i` flag that allows you to render the file *in-place* before letting helm consume it. This is something that is being done as part of a Makefile within a CI job.
 
 ```
-~$ s5 render -i values.yml
+~$ s5 render vault -i values.yml
 ~$ helm deploy release chart -f values.yml
 ```
 
