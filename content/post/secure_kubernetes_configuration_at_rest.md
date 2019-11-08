@@ -191,7 +191,7 @@ You will also need permissions to manipulate the transit backend or already have
 
 Well, having a Vault endpoint ready is only **about 4 commands** that you can run on your laptop on most common OSes! [Full download page can be found here](https://www.vaultproject.io/downloads.html).
 
-```
+```bash
 ~$ wget https://releases.hashicorp.com/vault/0.10.3/vault_0.10.3_linux_amd64.zip -O /tmp/vault.zip
 ~$ sudo unzip /tmp/vault.zip -d /usr/local/bin
 ~$ sudo chmod +x /usr/local/bin/vault
@@ -217,7 +217,7 @@ Now that the Vault endpoint is ready, for ease of use you can configure some env
 
 You can check that everything is running well by doing a `vault status`.
 
-```
+```bash
 ~$ vault status -format json
 {
   "type": "shamir",
@@ -246,7 +246,7 @@ Success! Enabled the transit secrets engine at: transit/
 
 Luckily it's exactly the same as for `Vault`:
 
-```
+```bash
 # From GitHub.com
 ~$ wget https://github.com/mvisonneau/s5/releases/download/0.1.1/s5_linux_amd64 -O /usr/local/bin/s5
 ~$ sudo chmod +x /usr/local/bin/s5
@@ -271,7 +271,7 @@ foobar
 
 `s5` uses `default` as *transit key name* if none is specified. On top of that, if a transit key do not exist, `Vault` will create it on the **ciphering request** as long as you have sufficient privileges on the endpoint. You can easily verify that:
 
-```
+```bash
 ~$ vault list -format json transit/keys
 [
   "default"
@@ -280,7 +280,7 @@ foobar
 
 From now it is fairly straightforward and pretty much up to you, you can use the pattern anywhere in your files. As I mentioned earlier:
 
-```
+```bash
 # CIPHER YOUR VALUES
 ~$ s5 cipher vault foo
 {{ s5:t9RZefdJ38sgosufeLRPNhUx7E0lC0tIiXp4iL676Q== }}
