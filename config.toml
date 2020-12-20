@@ -56,6 +56,14 @@ pygmentsUseClasses  = true
   [[params.social]]
     name = "gitlab"
     url = "https://gitlab.com/mvisonneau"
+  
+  [[params.social]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/mvisonneau/"
+  
+  [[params.social]]
+    name = "keybase"
+    url = "https://keybase.io/mvisonneau"
 
 [menu]
   [[menu.main]]
